@@ -41,7 +41,7 @@ export default {
 
   async asyncData({$axios}){
     try {
-      let response = await $axios.$get("http://localhost:3000/api/categories")
+      let response = await $axios.$get("https://amazon-clone-server.vercel.app//api/categories")
 
       return{
         categories : response.categories  
@@ -61,7 +61,7 @@ export default {
     async onAddCategory(){
       try {
         let data = { type:this.type}
-        let response = await this.$axios.$post("http://localhost:3000/api/categories",data) 
+        let response = await this.$axios.$post("https://amazon-clone-server.vercel.app//api/categories",data) 
         
         if(response.status){
           this.categories.push(data)  
